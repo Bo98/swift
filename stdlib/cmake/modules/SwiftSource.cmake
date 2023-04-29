@@ -749,7 +749,7 @@ function(_compile_swift_files
 
   set(line_directive_tool "${SWIFT_SOURCE_DIR}/utils/line-directive")
 
-  if(CMAKE_HOST_SYSTEM_NAME STREQUAL Windows)
+  if(CMAKE_HOST_SYSTEM_NAME STREQUAL "Windows")
     set(HOST_EXECUTABLE_SUFFIX .exe)
   endif()
   if(SWIFT_BUILD_RUNTIME_WITH_HOST_COMPILER)
@@ -767,7 +767,7 @@ function(_compile_swift_files
         "${SWIFT_NATIVE_SWIFT_TOOLS_PATH}/swiftc${HOST_EXECUTABLE_SUFFIX}"
         "${SWIFTFILE_BOOTSTRAPPING}")
 
-    if(NOT ${SWIFTFILE_BOOTSTRAPPING} STREQUAL "")
+    if(NOT "${SWIFTFILE_BOOTSTRAPPING}" STREQUAL "")
       set(target_suffix "-bootstrapping${SWIFTFILE_BOOTSTRAPPING}")
     endif()
 
